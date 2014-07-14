@@ -18,19 +18,23 @@ describe('Counter', function () {
         }, done);
   });
 
-
-  xit('should increase the count when the user clicks Add', function () {
-
+  it('should increase the count when the user clicks Add', function () {
+    this.$add.click();
+    expect(this.$count.text()).to.equal('1');
   });
 
-  xit('should decrease the count when the user clicks Remove', function () {
-
+  it('should decrease the count when the user clicks Remove', function () {
+    this.$remove.click();
+    expect(this.$count.text()).to.equal('-1');
   });
 
-  xit('should populate the history with previous count values', function () {
-
+  it('should populate the history with previous count values', function () {
+    this.$add.click();
+    this.$add.click();
+    this.$remove.click();
+    this.$add.click();
+    expect(this.$historyValues.text()).to.equal('0, 1, 2, 1, 2');
   });
-
 
 });
 
