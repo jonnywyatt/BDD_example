@@ -2,7 +2,7 @@
   "name": "front-end-base-project",
   "version": "1.0.0",
   "dependencies": {
-    "bower": "~1.2"
+    "bower": "^1.2"
   },
   "engine": {
     "node": "0.10.x",
@@ -20,6 +20,7 @@
     "karma-chai": "^0.1.0",
     "sinon": "^1.9.0",
     "karma-sinon": "^1.0.3",
-    "karma-html2js-preprocessor": "^0.1.0"
+    "karma-html2js-preprocessor": "^0.1.0",
+    "karma-phantomjs-launcher": "^0.1.4"
   }
 }
