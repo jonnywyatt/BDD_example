@@ -53,5 +53,5 @@
 
   "expr": true,
 
-  "predef": ["describe", "before", "beforeEach", "it", "expect", "requirejs", "require"]
+  "predef": ["describe", "before", "beforeEach", "it", "expect", "requirejs", "require", "define", "xit"]
 }
