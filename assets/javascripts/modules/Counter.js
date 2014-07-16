@@ -1,25 +1,27 @@
-define([], function () {
+define(['jquery'], function ($) {
 
   'use strict';
 
   var Counter = function ($el) {
     var $add = $el.find('.counter__add'),
         $remove = $el.find('.counter__remove'),
-        currentCount = parseInt($el.find('.counter__count').text(), 10),
-        $historyValues = $el.find('.counter__history-values');
+        self = this;
 
-    $add.on('click', function() {
-      currentCount++;
-      $historyValues.text($historyValues.text() + ', ' + currentCount);
-      $el.find('.counter__count').text(currentCount);
+    this.$el = $el;
+    this.currentCount = parseInt($el.find('.counter__count').text(), 10),
+    $add.on('click', function () {
+      self._update(1);
     });
-
-    $remove.on('click', function() {
-      currentCount--;
-      $historyValues.text($historyValues.text() + ', ' + currentCount);
-      $el.find('.counter__count').text(currentCount);
+    $remove.on('click', function () {
+      self._update(-1);
     });
+  };
 
+  Counter.prototype._update = function (increment) {
+    var $historyValues = this.$el.find('.counter__history-values');
+    this.currentCount = this.currentCount + increment;
+    $historyValues.text($historyValues.text() + ', ' + this.currentCount);
+    this.$el.find('.counter__count').text(this.currentCount);
   };
 
   return Counter;
