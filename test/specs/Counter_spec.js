@@ -36,5 +36,14 @@ describe('Feature: Counter', function () {
     expect(this.$historyValues.text()).to.equal('0, 1, 2, 1, 2');
   });
 
+  it('should save the counter value', function() {
+    var query;
+    this.server = sinon.fakeServer.create();
+    this.$add.click();
+    query = this.server.requests[0].url.split('?')[1];
+    expect(query).to.contain('count=1');
+    this.server.restore();
+  });
+
 });
 

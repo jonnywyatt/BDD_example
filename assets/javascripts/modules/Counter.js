@@ -22,6 +22,7 @@ define(['jquery'], function ($) {
     this.currentCount = this.currentCount + increment;
     $historyValues.text($historyValues.text() + ', ' + this.currentCount);
     this.$el.find('.counter__count').text(this.currentCount);
+    $.get('/counter?count=' + this.currentCount);
   };
 
   return Counter;
