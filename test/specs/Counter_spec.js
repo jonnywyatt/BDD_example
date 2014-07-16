@@ -1,4 +1,4 @@
-describe('Counter', function () {
+describe('Feature: Counter', function () {
 
   'use strict';
 
@@ -18,17 +18,17 @@ describe('Counter', function () {
         }, done);
   });
 
-  it('should increase the count when the user clicks Add', function () {
+  it('should increase the count when the user Adds', function () {
     this.$add.click();
     expect(this.$count.text()).to.equal('1');
   });
 
-  it('should decrease the count when the user clicks Remove', function () {
+  it('should decrease the count when the user Removes', function () {
     this.$remove.click();
     expect(this.$count.text()).to.equal('-1');
   });
 
-  it('should populate the history with previous count values', function () {
+  it('should show a history with previous count values', function () {
     this.$add.click();
     this.$add.click();
     this.$remove.click();
